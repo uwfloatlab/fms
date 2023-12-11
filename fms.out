@@ -1,2 +1,4 @@
 (Jul 13 20:13:46.861) MessageLogger::MessageLogger() ... Enabling logging functions.
 (Jul 13 20:13:46.862) MessageLogger::~MessageLogger() ... Disabling logging functions.
+(Dec 11 18:15:44.089) MessageLogger::MessageLogger() ... Enabling logging functions.
+(Dec 11 18:15:44.089) MessageLogger::~MessageLogger() ... Disabling logging functions.

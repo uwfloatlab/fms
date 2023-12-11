@@ -33,6 +33,11 @@ d   [0-9]
 h   [0-9A-F]
 s   -
 
+P   [ ]{0,5}-?[0-9]{1,4}\.[0-9]{1,2}
+T   [ ]{0,5}-?[0-9]{1,2}\.[0-9]{3,4}
+S   [ ]{0,5}-?[0-9]{1,2}\.[0-9]{3,4}
+F   [ .+-0123456789]+
+
 %%
 
 <INITIAL>
@@ -49,6 +54,14 @@ s   -
       return true;
    }
 
+   /* define a navis Pts/sbe{63,83} response string */
+   ^{P},{T},{S},{F},{F},{F},{F}\r\n {
+      buf=yytext; *len=yyleng;
+      const char *title = "SpyStream::Read(PtsFull)";
+      msg.Sbe41Response(title,buf,*len);
+      return true;
+   }
+   
    /* define elements of an STS profile */
    ^{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}\r\n |
    ^{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}{h}\r\n {

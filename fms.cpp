@@ -54,7 +54,7 @@ int main(int argc,char *argv[])
    MetaCmd cmd[NCMD]=
    {
       {"id=","     Float identifier."},
-      {"email=","  Email address of float watcher. [swift@ocean.washington.edu]"},
+      {"email=","  Email address of float watcher. [aadu@uw.edu]"},
       {"M=","      Float mass (g). [25700g]"},
       {"Pbot=","   Set the pressure at the bottom of the ocean (dbar). [NaN]"},
       {"P=","      Set the initial float pressure (dbar). [neutal-buoyancy]"},
@@ -83,7 +83,7 @@ int main(int argc,char *argv[])
    const char *id = (cmd[id_].arg) ? cmd[id_].arg : "(undefined)";
 
    // initialize the email respondent
-   const char *email = (cmd[email_].arg) ? cmd[email_].arg : "swift@ocean.washington.edu";
+   const char *email = (cmd[email_].arg) ? cmd[email_].arg : "aadu@uw.edu";
 
    // initialize the mass of the float
    const float M = (cmd[M_].arg) ? atof(cmd[M_].arg) : 25700;
